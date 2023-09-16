@@ -1,10 +1,10 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
+import React from 'react';
+import { Container } from 'react-bootstrap';
 
-const Map = () => {
+const AboutPage = () => {
   return (
     <Container className='mt-5 py-2' style={{background: '#053566'}}>
-        <h3 className='text-light'>Карта станций</h3>
+        <h3 className='text-light'>Информация о сайте</h3>
         <hr className='text-light' />
         <Container className='py-2' style={{background: '#00183A'}}>
             <h3 className='text-light'>Содержимое страницы</h3>
@@ -13,4 +13,4 @@ const Map = () => {
   )
 }
 
-export default Map
+export default AboutPage
