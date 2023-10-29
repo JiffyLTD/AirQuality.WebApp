@@ -38,7 +38,16 @@ const MainPage = () => {
           <Suspense fallback={<PageLoader />}>
             {
               wsData.map( (data) => (
-                <AQ_Data id={data.id} temperature={data.temperature} humidity={data.humidity} creationDate={data.creationDate}/>
+                <AQ_Data 
+                  id={data.id}
+                  temperature={data.temperature}
+                  humidity={data.humidity}
+                  pm_1={data.pm_1}
+                  pm2_5={data.pm2_5}
+                  pm_10={data.pm_10}
+                  co={data.co}
+                  creationDate={data.creationDate}
+                />
               ))
             }
           </Suspense>
