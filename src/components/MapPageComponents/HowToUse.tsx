@@ -4,7 +4,8 @@ const HowToUse = () => {
   return (
     <div className="mt-5">
           <h3 className="text-light">Как пользоваться?</h3>
-          <div className="mt-2 px-5 py-5">
+          <hr className="text-light" />
+          <div className="px-5 py-3">
             <p className="text-light fs-4">
                 На карте вы сможете найти метки, которые укажут местоположение метеостанций. Они могут быть 3х видов.
             </p>
@@ -14,11 +15,11 @@ const HowToUse = () => {
                 <img className='text-light' src="static/badMarker.png" alt="Не удалось загрузить фото" />
             </div>
             <p className="text-light fs-4">
-                Цвет метки зависит от среднего показателя взвешенных частиц в воздухе по параметрам PM1, PM2.5, PM10
+                Цвет метки зависит от среднего показателя взвешенных частиц в воздухе, цифра внутри метки и есть показатель
                 <ul>
                     <li>Зеленый - воздух чистый</li>
                     <li>Оранжевый - воздух относительно чистый</li>
-                    <li>Зеленый - воздух загрязнен</li>
+                    <li>Красный - воздух загрязнен</li>
                 </ul>
             </p>
             <p className="text-light fs-4">

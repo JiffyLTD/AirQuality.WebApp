@@ -8,10 +8,11 @@ const Header = () => {
         <Container>
             <Navbar.Brand href="/" className='text-light fs-1'>AirQuality</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-            <Navbar.Collapse id="basic-navbar-nav">
+            <Navbar.Collapse id="basic-navbar-nav" defaultValue="/">
               <Nav className="me-auto px-5">
-                  <Nav.Link href="/" className='text-light fs-2 px-3'>Главная</Nav.Link>
+                  <Nav.Link href="/" className='text-light fs-2 px-3 link-underline-light'>Главная</Nav.Link>
                   <Nav.Link href="/map" className='text-light fs-2 px-3'>Карта</Nav.Link>
+                  <Nav.Link href="/station" className='text-light fs-2 px-3'>О метеостанции</Nav.Link>
                   <Nav.Link href="/about" className='text-light fs-2 px-3'>О нас</Nav.Link>
               </Nav>
             </Navbar.Collapse>
