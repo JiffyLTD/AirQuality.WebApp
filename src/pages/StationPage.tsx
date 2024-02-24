@@ -31,15 +31,15 @@ const StationPage = () => {
                 За основу был взят дизайн метеостанции из статьи на Хабре, 
                 которую можно почитать <a className='text-light' href="https://habr.com/ru/articles/755586/" target='blank'>тут</a>
                 <div className='d-block text-center mt-3'>
-                  <img className='text-light me-4' src="static/sensorDesign_1.png" alt="Не удалось загрузить фото" />
+                  <img className='text-light me-4' src="static/sensorDesign_1.png" alt="Не удалось загрузить фото" width={"80%"} height={"80%"} />
                   <p>Вид сверху</p>
                 </div>
                 <div className='d-block text-center mt-3'>
-                  <img className='text-light me-4' src="static/sensorDesign_2.png" alt="Не удалось загрузить фото" />
+                  <img className='text-light me-4' src="static/sensorDesign_2.png" alt="Не удалось загрузить фото" width={"80%"} height={"80%"} />
                   <p>Вид сбоку</p>
                 </div>
                 <div className='d-block text-center mt-3'>
-                  <img className='text-light me-4' src="static/sensorDesign_3.png" alt="Не удалось загрузить фото" />
+                  <img className='text-light me-4' src="static/sensorDesign_3.png" alt="Не удалось загрузить фото" width={"80%"} height={"80%"} />
                   <p>Расположение датчиков внутри</p>
                 </div>
             </p>

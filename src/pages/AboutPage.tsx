@@ -47,7 +47,7 @@ const AboutPage = () => {
             <p className="text-light fs-4">
                 <ul>
                   <li>C++</li>
-                  <li>Более подробно можно посмотреть <a className='text-light' href="/station" target='blank'>здесь</a></li>
+                  <li>Более подробно можно посмотреть <a className='text-light' href="/station">здесь</a></li>
                 </ul>
             </p>
 
