@@ -1,7 +1,20 @@
 import React, { useState, useEffect, Suspense } from 'react';
-import { Container } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
+import StationApi from '../api/StationApi';
 
 const MainPage = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [stationsCount, setStationsCount] = useState(0);
+
+  useEffect( () =>{
+    setIsLoading(true);
+    const getCount = async () => {
+      setStationsCount(await StationApi.getStationsCount());
+    }
+    
+    getCount();
+    setIsLoading(false);
+  }, [])
   
   return (
     <Container className="mt-5 py-2" style={{ background: "#053566" }}>
@@ -10,11 +23,16 @@ const MainPage = () => {
       <Container className="py-2" style={{ background: "#00183A" }}>
         <h3 className="text-light text-center">Количество станций онлайн</h3>
         <div className="mt-2 border rounded text-center">
-          <h4 className="text-light mt-2">Скоро будет &nbsp;
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-emoji-smile-upside-down-fill" viewBox="0 0 16 16">
-            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M7 9.5C7 8.672 6.552 8 6 8s-1 .672-1 1.5.448 1.5 1 1.5 1-.672 1-1.5M4.285 6.433a.5.5 0 0 0 .683-.183A3.5 3.5 0 0 1 8 4.5c1.295 0 2.426.703 3.032 1.75a.5.5 0 0 0 .866-.5A4.5 4.5 0 0 0 8 3.5a4.5 4.5 0 0 0-3.898 2.25.5.5 0 0 0 .183.683M10 8c-.552 0-1 .672-1 1.5s.448 1.5 1 1.5 1-.672 1-1.5S10.552 8 10 8"/>
-          </svg>
-          </h4>
+          <p className="text-light mt-2 fs-1">
+            {isLoading ?
+              <Spinner animation='grow'/>
+              :
+              (stationsCount === -1 ? 
+                <p className="text-danger mt-2 fs-3">Ошибка при загрузке...</p> 
+                :
+                <h1 className="text-light text-center">{stationsCount}</h1>)
+            }
+          </p>
           <p className="text-light text-end align-text-bottom me-1">*Станция считается онлайн, если она отправила данные в течение последних 24 часов</p>
         </div>
 
