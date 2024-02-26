@@ -1,7 +1,7 @@
-const Endpoint: string = "https://localhost:5100/webservice/graphql";
+const Endpoint: string = "";
 const Headers = {
     'content-type': 'application/json',
-    'api-key': 12345
+    'api-key': ''
 };
 
 export {Endpoint, Headers};

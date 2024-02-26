@@ -12,7 +12,7 @@ const MapPage = () => {
   const [stationInfo, setStationInfo] = useState(false);
   const [stations, setStations] = useState<any[]>([]);
   const [stationPlacemarks, setStationPlacemarks] = useState<any[]>([]);
-  const [stationDataLast, setStationDataLast] = useState();
+  const [stationDataLast, setStationDataLast] = useState({});
 
   const okIcon = "islands#darkGreenStretchyIcon";
   const mediumIcon = "islands#darkOrangeStretchyIcon";
@@ -46,7 +46,7 @@ const MapPage = () => {
   },[]);
 
   useEffect(() => {
-    const arr: any = [];
+    let arr: any = [];
 
     stations.forEach(async station => {
       const info = await InfoByLocationApi.getInfoByLocation(station.id);
@@ -57,13 +57,14 @@ const MapPage = () => {
         stationdId: station.id,
         latitude: latitude,
         longitude: longitude,
-        pm_avg: (info.avgPm_1 + info.avgPm_2_5 + info.avgPm_10) / 3
+        pm_avg: Math.round((info.avgPm_1 + info.avgPm_2_5 + info.avgPm_10) / 3)
       };
 
       arr.push(element);
 
       setStationPlacemarks(arr);
     });
+    arr = [];
   }, [stations])
 
   return (
