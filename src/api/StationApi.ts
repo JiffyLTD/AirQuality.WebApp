@@ -5,7 +5,7 @@ import Helper from "../helpers/Helper";
 export default class StationApi{
     static getStationsCount = async () => {
         try {
-            let dateNow = Helper.getDateNow();
+            let dateNow = Helper.getDateYesterday();
 
             const response = await axios.post(Endpoint,
                 {

@@ -7,6 +7,7 @@ export default class StationDataApi{
             const response = await axios.post(Endpoint,
                 {
                     query: `query{ stationDataLast(stationId: "${stationId}" ){ 
+                        stationId,
                         temperature,
                         humidity,
                         pressure, 
